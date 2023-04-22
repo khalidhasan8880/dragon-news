@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Image, Nav, Navbar } from 'react-bootstrap';
 import logo from '../../assets/logo.png'
 import moment from 'moment/moment';
+import Marquee from "react-fast-marquee";
 const Header = () => {
     return (
         <div className='container'>
@@ -9,6 +10,12 @@ const Header = () => {
                 <img src={logo} alt="" />
                 <p className='my-3'><small>Journalism Without Fear or Favour</small></p>
                 <p className='my-3'>{moment().format("dddd, MMMM D, YYYY")}</p>
+            </div>
+            <div className='d-flex'>
+                <button className='btn btn-danger my-3'> Latest</button>
+                <Marquee speed={66}>
+                    I can be a React component, multiple React components, or just some text.
+                </Marquee>
             </div>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
