@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, ListGroup } from 'react-bootstrap';
 import { FaFacebook, FaGithub, FaGoogle, FaInstagram, FaTwitter } from 'react-icons/fa'
+import Qzone from './Qzone';
 const RightNav = () => {
     return (
         <div>
@@ -13,6 +14,7 @@ const RightNav = () => {
                     <ListGroup.Item ><FaTwitter  size={30} color='blue'></FaTwitter>  Twitter</ListGroup.Item>
                     <ListGroup.Item ><FaInstagram  size={30} color='blue'> </FaInstagram>  Instagram</ListGroup.Item>
                 </ListGroup>
+                <Qzone></Qzone>
             </div>
         </div>
     );
