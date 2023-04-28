@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home/Home";
 import Footer from "./pages/Shared/Footer";
 import Category from "./Category/Category";
 import NewsContent from "./NewsContext/NewsContent";
+import Login from "./Login/Login";
 
 const router = createBrowserRouter([
     {
@@ -26,7 +27,11 @@ const router = createBrowserRouter([
         path: '/news/:id',
         element: <NewsContent></NewsContent>,
         loader: ({params})=> fetch(`http://localhost:5000/news/${params.id}`)
-    }
+    },
+    {
+        path: '/login',
+        element:<Login></Login>
+    },
 ])
 
 export default router

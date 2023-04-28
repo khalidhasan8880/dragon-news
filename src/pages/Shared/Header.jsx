@@ -3,6 +3,7 @@ import { Button, Image, Nav, Navbar } from 'react-bootstrap';
 import logo from '../../assets/logo.png'
 import moment from 'moment/moment';
 import Marquee from "react-fast-marquee";
+import { FaUser} from 'react-icons/fa';
 const Header = () => {
     return (
         <div className='mb-5'>
@@ -26,8 +27,13 @@ const Header = () => {
                         <Nav.Link href="/career">Career</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="/profile"><Image src='https://picsum.photos/40' roundedCircle /></Nav.Link>
-                        <Button className='px-5 py-1 fw-bold' variant="dark">login</Button>
+                        <Nav.Link href="/"><FaUser style={{ fontSize: '21px' }}></FaUser></Nav.Link>
+                        {
+                            <Nav.Link href="/login">
+                                <Button className='px-5 py-1 fw-bold' variant="dark">login</Button>
+                            </Nav.Link>
+                        }
+
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
