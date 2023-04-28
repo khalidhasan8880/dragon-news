@@ -9,13 +9,15 @@ const LeftNav = () => {
         .then(res => res.json())
         .then(data => setCategories(data))
     },[])
-
+    // 'text-decoration-none d-block  mt-2 text-black ps-3 fw-bolder' 
     return (
         <div>
             <h3>News Categories</h3>
+            <div>
             {
-                categories.map(category=> <p key={category.id}><NavLink className='text-decoration-none text-black ps-3 fw-bolder' to={`/category/${category.id}`}>{category.name}</NavLink></p>)
+                categories.map(category=> <NavLink key={category.id}  className={({isActive})=> isActive? 'active text-decoration-none d-block  mt-2 text-black ps-3 fw-bolder': 'inactive text-decoration-none d-block  mt-2 text-black ps-3 fw-bolder'} to={`/category/${category.id}`}>{category.name}</NavLink>)
             }
+            </div>
         </div>
     );
 };

@@ -8,13 +8,16 @@ import RightNav from '../pages/Shared/RightNav';
 
 const Main = () => {
     return (
-        <div className='container'>
+        <div>
             <Header></Header>
             <Row>
                 <Col>
                     <LeftNav></LeftNav>
                 </Col>
-                <Col xs={6}>middler</Col>
+                <Col xs={6}>
+                    <h1 className='text-center bg-danger'>Middler</h1>
+                    <Outlet></Outlet>
+                </Col>
                 <Col>
                     <RightNav ></RightNav>
                 </Col>
