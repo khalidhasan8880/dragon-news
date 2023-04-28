@@ -1,10 +1,14 @@
-import React from 'react';
-import { Button, Image, Nav, Navbar } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Image} from 'react-bootstrap';
 import logo from '../../assets/logo.png'
 import moment from 'moment/moment';
 import Marquee from "react-fast-marquee";
-import { FaUser} from 'react-icons/fa';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import NavigationBar from './NavigationBar';
 const Header = () => {
+    const {user}=useContext(AuthContext)
+
+    
     return (
         <div className='mb-5'>
             <div className='text-center mb-3'>
@@ -18,25 +22,7 @@ const Header = () => {
                     I can be a React component, multiple React components, or just some text.
                 </Marquee>
             </div>
-            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mx-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/about">About</Nav.Link>
-                        <Nav.Link href="/career">Career</Nav.Link>
-                    </Nav>
-                    <Nav>
-                        <Nav.Link href="/"><FaUser style={{ fontSize: '21px' }}></FaUser></Nav.Link>
-                        {
-                            <Nav.Link href="/login">
-                                <Button className='px-5 py-1 fw-bold' variant="dark">login</Button>
-                            </Nav.Link>
-                        }
-
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
+            <NavigationBar></NavigationBar>
         </div>
     );
 };
