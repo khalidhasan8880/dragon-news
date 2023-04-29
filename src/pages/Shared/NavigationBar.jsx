@@ -4,10 +4,14 @@ import { FaUser } from 'react-icons/fa';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 const NavigationBar = () => {
 
-const {user}= useContext(AuthContext)
+const {user, logOut}= useContext(AuthContext)
 
 const logOutHandler = ()=>{
-    console.log('logOUt');
+    logOut().then(() => {
+         console.log('logOut successful');
+      }).catch((error) => {
+        console.log('logOut unsuccessful');
+    });
 }
 const loginHandler = ()=>{
     console.log('logIn');
@@ -25,7 +29,7 @@ const loginHandler = ()=>{
                     <Nav.Link href="/"><FaUser style={{ fontSize: '21px' }}></FaUser></Nav.Link>
                     {
                         user ?
-                            <Button onClick={logOutHandler} className='px-5 py-1 fw-bold' variant="dark">Logout</Button>
+                            <Button onClick={logOutHandler} className='px-5 py-1 fw-bold' variant="dark">Log out</Button>
                             :
                             <Nav.Link href="/login">
                                 <Button onClick={loginHandler} className='px-5 py-1 fw-bold' variant="dark">login</Button>

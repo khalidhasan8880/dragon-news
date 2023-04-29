@@ -6,6 +6,7 @@ import Category from "./Category/Category";
 import NewsContent from "./NewsContext/NewsContent";
 import Login from "./Login/Login";
 import Register from "./Register/Register";
+import PrivetRoute from "./PrivetRoute/PrivetRoute";
 
 const router = createBrowserRouter([
     {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/news/:id',
-        element: <NewsContent></NewsContent>,
+        element: <PrivetRoute><NewsContent></NewsContent></PrivetRoute>,
         loader: ({params})=> fetch(`http://localhost:5000/news/${params.id}`)
     },
     {
