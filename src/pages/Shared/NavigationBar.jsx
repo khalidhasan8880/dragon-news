@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Button,  Nav, Navbar } from 'react-bootstrap';
 import { FaUser } from 'react-icons/fa';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-
 const NavigationBar = () => {
 
 const {user}= useContext(AuthContext)
@@ -14,7 +13,7 @@ const loginHandler = ()=>{
     console.log('logIn');
 }
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar className='my-3' collapseOnSelect expand="lg" bg="light" variant="light">
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mx-auto">
