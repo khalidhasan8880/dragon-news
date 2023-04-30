@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Image } from 'react-bootstrap';
-import { FaBookmark, FaRegBookmark, FaRegStar, FaShare, FaShareAlt, FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import { FaBookmark, FaEye, FaRegBookmark, FaRegStar, FaShare, FaShareAlt, FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
 
@@ -28,8 +28,8 @@ const NewsCard = ({ news }) => {
                     }
                 </Card.Text>
             </Card.Body>
-            <Card.Footer className="text-muted">
-                <div>
+            <Card.Footer  className='d-flex '>
+                <div className='flex-grow-1'>
                     <Rating
                         readonly
                         placeholderRating={rating?.number}
@@ -37,6 +37,9 @@ const NewsCard = ({ news }) => {
                         placeholderSymbol={<FaStar className='text-danger'></FaStar>}
                         fullSymbol={<FaStar></FaStar>}
                     ></Rating>
+                </div>
+                <div className='d-flex align-items-center '>
+                    <FaEye></FaEye> <span className='ms-2'>{total_view}</span>
                 </div>
             </Card.Footer>
         </Card>
