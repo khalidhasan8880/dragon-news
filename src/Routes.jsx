@@ -7,6 +7,7 @@ import NewsContent from "./NewsContext/NewsContent";
 import Login from "./Login/Login";
 import Register from "./Register/Register";
 import PrivetRoute from "./PrivetRoute/PrivetRoute";
+import Terms from "./Terms/Terms";
 
 const router = createBrowserRouter([
     {
@@ -16,19 +17,19 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Category></Category>,
-                loader: () => fetch(`http://localhost:5000/news`)
+                loader: () => fetch(`https://dragon-news-server-three-dun.vercel.app/news`)
             },
             {
                 path:'/category/:id',
                 element: <Category></Category>,
-                loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({params}) => fetch(`https://dragon-news-server-three-dun.vercel.app/category/${params.id}`)
             },
         ]
     },
     {
         path: '/news/:id',
         element: <PrivetRoute><NewsContent></NewsContent></PrivetRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/news/${params.id}`)
+        loader: ({params})=> fetch(`https://dragon-news-server-three-dun.vercel.app/news/${params.id}`)
     },
     {
         path: '/login',
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
     {
         path: '/register',
         element:<Register/>
+    },
+    {
+        path: '/terms&conditions',
+        element:<Terms></Terms>
     },
 ])
 

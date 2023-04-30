@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const navigate =useNavigate()
@@ -42,6 +42,9 @@ const Login = () => {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" name='password' placeholder="Password" />
+        </Form.Group>
+        <Form.Group>
+          <Form.Text>New To Dragon news Please <Link to='/register'>Sign Up</Link></Form.Text>
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit
